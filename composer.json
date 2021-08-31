@@ -1,7 +1,7 @@
 {
-    "name": "neutrondev/nusoap",
+    "name": "neutrondev/new-nusoap",
     "type": "library",
-    "description": "NuSoap, only different.",
+    "description": "New NuSoap",
     "keywords": [
         "soap",
         "nusoap",
@@ -12,7 +12,7 @@
         "client"
     ],
     "license": "LGPL-2.0-only",
-    "homepage": "https://github.com/pwnlabs/nusoap",
+    "homepage": "https://github.com/LeoWare/nusoap",
     "authors": [
         {
             "name": "Samuel Raynor",
@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
+        "php": ">=7.4",
         "ext-curl": "*"
     },
     "require-dev": {
