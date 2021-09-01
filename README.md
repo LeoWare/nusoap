@@ -1,20 +1,20 @@
 [comment]: <> (Version $Id: $)
 
-<h1 style="text-align: center">New NuSOAP</h1>
+<h1 align="center">New NuSOAP</h1>
 
-<p style="text-align: center">
+<p align="center">
 NuSOAP is a rewrite of SOAPx4, provided by NuSphere and Dietrich Ayala. It is a set of PHP classes - no PHP extensions required - that allow developers to create and consume web services based on SOAP 1.1, WSDL 1.1 and HTTP 1.0/1.1.
 </p>
 
-<p style="text-align: center">
+<p align="center">
 💻 <a href="https://github.com/LeoWare">LeoWare</a>
 </p>
 
-<p style="text-align: center">
+<p align="center">
   All credits belongs to official authors, take a look at <a href="https://sourceforge.net/projects/nusoap/">sourceforge.net/projects/nusoap/</a>
 </p>
 
-<p style="text-align: center">
+<p align="center">
     <a href="https://packagist.org/packages/neutrondev/new-nusoap"><img src="https://img.shields.io/packagist/l/neutrondev/new-nusoap.svg?style=flat-square"></a>
     <a href="https://packagist.org/packages/neutrondev/new-nusoap"><img src="https://img.shields.io/packagist/dt/neutrondev/new-nusoap.svg?style=flat-square"></a>
     <a href="https://packagist.org/packages/neutrondev/new-nusoap"><img src="https://img.shields.io/packagist/v/neutrondev/new-nusoap.svg?style=flat-square"></a>
