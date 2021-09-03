@@ -1,4 +1,4 @@
-[comment]: <> (Version $Id: $)
+[comment]: <> (Version $Id$)
 
 <h1 align="center">New NuSOAP</h1>
 
@@ -26,13 +26,13 @@ NuSOAP is a rewrite of SOAPx4, provided by NuSphere and Dietrich Ayala. It is a 
 
 - Supported PHP: 7.4 - 8.0
 - Latest version: [0.10](https://github.com/LeoWare/nusoap/releases/tag/v0.10)
-- Official project: https://sourceforge.net/projects/nusoap/
+- Official project: <https://sourceforge.net/projects/nusoap/>
 
 ## Installation
 
 To install this library use [Composer](https://getcomposer.org/).
 
-```
+```shell
 composer require neutrondev/new-nusoap
 ```
 
