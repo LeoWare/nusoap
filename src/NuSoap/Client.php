@@ -5,7 +5,6 @@ namespace NuSoap;
 use NuSoap;
 
 /**
- *
  * [nu]soapclient higher level class for easy usage.
  *
  * usage:
@@ -383,7 +382,7 @@ class Client extends NuSoap\Base
     function loadWSDL()
     {
         $this->debug('instantiating wsdl class with doc: ' . $this->wsdlFile);
-        $this->wsdl = new NuSoap\wsdl('', $this->proxyhost, $this->proxyport, $this->proxyusername, $this->proxypassword, $this->timeout, $this->response_timeout, $this->curl_options, $this->use_curl);
+        $this->wsdl = new NuSoap\Wsdl('', $this->proxyhost, $this->proxyport, $this->proxyusername, $this->proxypassword, $this->timeout, $this->response_timeout, $this->curl_options, $this->use_curl);
         $this->wsdl->setCredentials($this->username, $this->password, $this->authtype, $this->certRequest);
         $this->wsdl->fetchWSDL($this->wsdlFile);
         $this->checkWSDL();
@@ -435,7 +434,7 @@ class Client extends NuSoap\Base
                 if ($this->persistentConnection == true && is_object($this->persistentConnection)) {
                     $http =& $this->persistentConnection;
                 } else {
-                    $http = new NuSoap\soap_transport_http($this->endpoint, $this->curl_options, $this->use_curl);
+                    $http = new NuSoap\Transport\Http($this->endpoint, $this->curl_options, $this->use_curl);
                     if ($this->persistentConnection) {
                         $http->usePersistentConnection();
                     }

@@ -5,8 +5,7 @@ namespace NuSoap;
 use NuSoap;
 
 /**
- *
- * Parser class parses SOAP XML messages into native PHP values
+ * Parses SOAP XML messages into native PHP values
  *
  * @author   Dietrich Ayala <dietrich@ganx4.com>
  * @author   Scott Nichol <snichol@users.sourceforge.net>
@@ -15,7 +14,6 @@ use NuSoap;
  */
 class Parser extends NuSoap\Base
 {
-
     public string $xml = '';
     public string $xml_encoding = '';
     public string $method = '';

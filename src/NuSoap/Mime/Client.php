@@ -2,8 +2,12 @@
 
 namespace NuSoap\Mime;
 
+use Mail_mimePart;
+use Mail_mimeDecode;
+use NuSoap\Client as BaseClient;
+
 /**
- * NuSoap\Mime\nusoap_client_mime client supporting MIME attachments defined at
+ * NuSoap\Mime\Client client supporting MIME attachments defined at
  * http://www.w3.org/TR/SOAP-attachments.  It depends on the PEAR Mail_MIME library.
  *
  * @author    Scott Nichol <snichol@users.sourceforge.net>
@@ -11,7 +15,7 @@ namespace NuSoap\Mime;
  * @version   $Id$
  * @access    public
  */
-class nusoap_client_mime extends nusoap_client
+class Client extends BaseClient
 {
     /**
      * @var array Each array element in the return is an associative array with keys

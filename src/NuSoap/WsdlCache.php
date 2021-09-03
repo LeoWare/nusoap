@@ -3,7 +3,7 @@
 namespace NuSoap;
 
 /**
- * caches instances of the wsdl class
+ * Caches instances of the Wsdl class
  *
  * @author   Scott Nichol <snichol@users.sourceforge.net>
  * @author    Ingo Fischer <ingo@apollon.de>

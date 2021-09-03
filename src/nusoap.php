@@ -52,26 +52,12 @@ http://www.nusphere.com
  */
 
 /* load classes
-
-// necessary classes
-require_once('class.soapclient.php');
-require_once('class.soap_val.php');
-require_once('class.soap_parser.php');
-require_once('class.soap_fault.php');
-
-// transport classes
-require_once('class.soap_transport_http.php');
-
-// optional add-on classes
-require_once('class.xmlschema.php');
-require_once('class.wsdl.php');
-
-// server class
-require_once('class.soap_server.php');*/
+require_once('../vendor/autoload.php');
+*/
 
 // class variable emulation
 // cf. http://www.webkreator.com/php/techniques/php-static-class-variables.html
-$GLOBALS['_transient']['static']['NuSoap\nusoap_base']['globalDebugLevel'] = 9;
+$GLOBALS['_transient']['static']['NuSoap\Base']['globalDebugLevel'] = 9;
 
 
 // XML Schema Datatype Helper Functions
@@ -81,10 +67,12 @@ $GLOBALS['_transient']['static']['NuSoap\nusoap_base']['globalDebugLevel'] = 9;
 /**
  * convert unix timestamp to ISO 8601 compliant date string
  *
- * @param    int $timestamp Unix time stamp
- * @param    boolean $utc Whether the time stamp is UTC or local
- * @return    mixed ISO 8601 date string or false
- * @access   public
+ * @param int     $timestamp Unix time stamp
+ * @param boolean $utc       Whether the time stamp is UTC or local
+ *
+ * @return mixed ISO 8601 date string or false
+ * @access public
+ * @deprecated
  */
 function timestamp_to_iso8601($timestamp, $utc = true)
 {
@@ -111,7 +99,13 @@ function timestamp_to_iso8601($timestamp, $utc = true)
             '/';
 
         if (preg_match($pattern, $datestr, $regs)) {
-            return sprintf('%04d-%02d-%02dT%02d:%02d:%02dZ', $regs[1], $regs[2], $regs[3], $regs[4], $regs[5], $regs[6]);
+            return sprintf('%04d-%02d-%02dT%02d:%02d:%02dZ',
+                           $regs[1],
+                           $regs[2],
+                           $regs[3],
+                           $regs[4],
+                           $regs[5],
+                           $regs[6]);
         }
         return false;
     } else {
@@ -122,9 +116,11 @@ function timestamp_to_iso8601($timestamp, $utc = true)
 /**
  * convert ISO 8601 compliant date string to unix timestamp
  *
- * @param    string $datestr ISO 8601 compliant date string
- * @return    mixed Unix timestamp (int) or false
- * @access   public
+ * @param string $datestr ISO 8601 compliant date string
+ *
+ * @return mixed Unix timestamp (int) or false
+ * @access public
+ * @deprecated
  */
 function iso8601_to_timestamp($datestr)
 {
@@ -162,7 +158,8 @@ function iso8601_to_timestamp($datestr)
 /**
  * sleeps some number of microseconds
  *
- * @param    string $usec the number of microseconds to sleep
+ * @param string $usec the number of microseconds to sleep
+ *
  * @access   public
  * @deprecated
  */
@@ -175,14 +172,4 @@ function usleepWindows($usec)
         $timePassed = 1000000 * ($stop['sec'] - $start['sec'])
             + $stop['usec'] - $start['usec'];
     } while ($timePassed < $usec);
-}
-
-
-if (!extension_loaded('soap')) {
-    /**
-     *    For backwards compatiblity, define soapclient unless the PHP SOAP extension is loaded.
-     */
-    class soapclient extends NuSoap\nusoap_client
-    {
-    }
 }

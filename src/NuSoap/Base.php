@@ -1,16 +1,21 @@
 <?php
+/**
+ * @package  NewNuSoap
+ * @license  https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt LGPL
+ */
 
 namespace NuSoap;
 
 /**
  *
- * Base
+ * NuSoap\Base
+ *
+ * All NuSoap classes extend from this class.
  *
  * @author   Dietrich Ayala <dietrich@ganx4.com>
  * @author   Scott Nichol <snichol@users.sourceforge.net>
  * @author   Samuel Raynor <samuel@neutrondevelopment.com>
- * @version  $Id$
- * @access   public
+ * @version  git: $Id$
  */
 class Base
 {
@@ -116,7 +121,7 @@ class Base
     /**
      * XML Schema types in an array of uri => (array of xml type => php type)
      * is this legacy yet?
-     * no, this is used by the nusoap_xmlschema class to verify type => namespace mappings.
+     * no, this is used by the XMLSchema class to verify type => namespace mappings.
      *
      * @var    array
      * @access public
@@ -435,7 +440,7 @@ class Base
      * @param string  $type       The XML schema type (local part) for the element
      * @param string  $name_ns    The namespace for the name of the XML element
      * @param string  $type_ns    The namespace for the type of the element
-     * @param array   $attributes The attributes to serialize as name=>value pairs
+     * @param mixed   $attributes The attributes to serialize as name=>value pairs
      * @param string  $use        The WSDL "use" (encoded|literal)
      * @param boolean $soapval    Whether this is called from soapval.
      *
@@ -448,7 +453,7 @@ class Base
         string $type = '',
         string $name_ns = '',
         string $type_ns = '',
-        array $attributes = [],
+        $attributes = [],
         string $use = 'encoded',
         bool $soapval = false
     ): string {
@@ -592,19 +597,19 @@ class Base
                     foreach (get_object_vars($val) as $k => $v) {
                         $pXml = isset($pXml)
                             ? $pXml . $this->serialize_val($v,
-                                                           $k,
-                                                           false,
-                                                           false,
-                                                           false,
-                                                           false,
-                                                           $use)
+                                $k,
+                                false,
+                                false,
+                                false,
+                                false,
+                                $use)
                             : $this->serialize_val($v,
-                                                   $k,
-                                                   false,
-                                                   false,
-                                                   false,
-                                                   false,
-                                                   $use);
+                                $k,
+                                false,
+                                false,
+                                false,
+                                false,
+                                $use);
                     }
                 }
                 if (isset($type) && isset($type_prefix)) {
@@ -638,12 +643,12 @@ class Base
                             $array_types[$tt] = 1;
                             // TODO: for literal, the name should be $name
                             $xml .= $this->serialize_val($v,
-                                                         'item',
-                                                         false,
-                                                         false,
-                                                         false,
-                                                         false,
-                                                         $use);
+                                'item',
+                                false,
+                                false,
+                                false,
+                                false,
+                                $use);
                             ++$i;
                         }
                         if (count($array_types) > 1) {
@@ -707,19 +712,19 @@ class Base
                         if ($type == 'Map' && $type_ns == 'http://xml.apache.org/xml-soap') {
                             $xml .= '<item>';
                             $xml .= $this->serialize_val($k,
-                                                         'key',
-                                                         false,
-                                                         false,
-                                                         false,
-                                                         false,
-                                                         $use);
+                                'key',
+                                false,
+                                false,
+                                false,
+                                false,
+                                $use);
                             $xml .= $this->serialize_val($v,
-                                                         'value',
-                                                         false,
-                                                         false,
-                                                         false,
-                                                         false,
-                                                         $use);
+                                'value',
+                                false,
+                                false,
+                                false,
+                                false,
+                                $use);
                             $xml .= '</item>';
                         } else {
                             $xml .= $this->serialize_val($v, $k, false, false, false, false, $use);
@@ -754,8 +759,8 @@ class Base
      */
     public function serializeEnvelope(
         string $body,
-               $headers = false,
-        array  $namespaces = [],
+        $headers = false,
+        array $namespaces = [],
         string $style = 'rpc',
         string $use = 'encoded',
         string $encodingStyle = 'http://schemas.xmlsoap.org/soap/encoding/'
@@ -765,12 +770,12 @@ class Base
         // one to send arbitrary UTF-8 characters, not just characters that map to ISO-8859-1
 
         $this->debug("In serializeEnvelope length="
-                     . strlen($body)
-                     . " body (max 1000 characters)="
-                     . substr($body,
-                              0,
-                              1000)
-                     . " style=$style use=$use encodingStyle=$encodingStyle");
+            . strlen($body)
+            . " body (max 1000 characters)="
+            . substr($body,
+                0,
+                1000)
+            . " style=$style use=$use encodingStyle=$encodingStyle");
         $this->debug("headers:");
         $this->appendDebug($this->varDump($headers));
         $this->debug("namespaces:");

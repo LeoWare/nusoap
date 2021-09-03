@@ -5,8 +5,7 @@ namespace NuSoap;
 use NuSoap;
 
 /**
- *
- * Server allows the user to create a SOAP server
+ * Allows the user to create a SOAP server
  * that is capable of receiving messages and returning responses
  *
  * @author   Dietrich Ayala <dietrich@ganx4.com>
@@ -243,7 +242,7 @@ class Server extends NuSoap\Base
                 $this->debug('Use existing wsdl instance from ' . $this->externalWSDLURL);
             } else {
                 $this->debug('Create wsdl from ' . $wsdl);
-                $this->wsdl = new wsdl($wsdl);
+                $this->wsdl = new Wsdl($wsdl);
                 $this->externalWSDLURL = $wsdl;
             }
             $this->appendDebug($this->wsdl->getDebug());
@@ -311,7 +310,7 @@ class Server extends NuSoap\Base
                 }
             } elseif ($this->wsdl) {
                 $this->debug("In service, serialize WSDL");
-                header("Content-Type: text/xml; charset=ISO-8859-1\r\n");
+                header("Content-Type: text/xml; charset=UTF-8\r\n");
                 print $this->wsdl->serialize($this->debug_flag);
                 if ($this->debug_flag) {
                     $this->debug('wsdl:');
@@ -1142,7 +1141,7 @@ class Server extends NuSoap\Base
             $schemaTargetNamespace = $namespace;
         }
 
-        $this->wsdl = new wsdl;
+        $this->wsdl = new Wsdl;
         $this->wsdl->serviceName = $serviceName;
         $this->wsdl->endpoint = $endpoint;
         $this->wsdl->namespaces['tns'] = $namespace;
@@ -1151,7 +1150,7 @@ class Server extends NuSoap\Base
         if ($schemaTargetNamespace != $namespace) {
             $this->wsdl->namespaces['types'] = $schemaTargetNamespace;
         }
-        $this->wsdl->schemas[$schemaTargetNamespace][0] = new NuSoap\nusoap_xmlschema('', '', $this->wsdl->namespaces);
+        $this->wsdl->schemas[$schemaTargetNamespace][0] = new NuSoap\XMLSchema('', '', $this->wsdl->namespaces);
         if ($style == 'document') {
             $this->wsdl->schemas[$schemaTargetNamespace][0]->schemaInfo['elementFormDefault'] = 'qualified';
         }

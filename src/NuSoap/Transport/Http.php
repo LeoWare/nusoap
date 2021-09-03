@@ -1,6 +1,6 @@
 <?php
 
-namespace NuSoap;
+namespace NuSoap\Transport;
 
 use NuSoap;
 
@@ -14,7 +14,7 @@ use NuSoap;
  * @version  $Id$
  * @access public
  */
-class soap_transport_http extends NuSoap\Base
+class Http extends NuSoap\Base
 {
 
     var $url = '';

@@ -2,6 +2,10 @@
 
 namespace NuSoap\Mime;
 
+use Mail_mimePart;
+use Mail_mimeDecode;
+use NuSoap\Server as BaseServer;
+
 /**
  * NuSoap\Mime\nusoap_server_mime server supporting MIME attachments defined at
  * http://www.w3.org/TR/SOAP-attachments.  It depends on the PEAR Mail_MIME library.
@@ -11,7 +15,7 @@ namespace NuSoap\Mime;
  * @version   $Id$
  * @access    public
  */
-class nusoap_server_mime extends Server
+class Server extends BaseServer
 {
     /**
      * @var array Each array element in the return is an associative array with keys
@@ -98,7 +102,7 @@ class nusoap_server_mime extends Server
      */
     function getHTTPBody($soapmsg)
     {
-        if (count($this->responseAttachments) > 0) {
+        if ((count($this->responseAttachments ?? [])) > 0) {
             $params['content_type'] = 'multipart/related; type="text/xml"';
             $mimeMessage = new Mail_mimePart('', $params);
             unset($params);
@@ -158,7 +162,7 @@ class nusoap_server_mime extends Server
      */
     function getHTTPContentType()
     {
-        if (count($this->responseAttachments) > 0) {
+        if (count($this->responseAttachments ?? []) > 0) {
             return $this->mimeContentType;
         }
         return parent::getHTTPContentType();
@@ -175,7 +179,7 @@ class nusoap_server_mime extends Server
      */
     function getHTTPContentTypeCharset()
     {
-        if (count($this->responseAttachments) > 0) {
+        if (count($this->responseAttachments ?? []) > 0) {
             return false;
         }
         return parent::getHTTPContentTypeCharset();
