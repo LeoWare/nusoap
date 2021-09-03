@@ -11,7 +11,7 @@
         "transport",
         "client"
     ],
-    "license": "LGPL-2.0-only",
+    "license": "LGPL-2.1-or-later",
     "homepage": "https://github.com/LeoWare/nusoap",
     "authors": [
         {
@@ -21,7 +21,8 @@
     ],
     "require": {
         "php": ">=7.4",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "ext-xml": "*"
     },
     "require-dev": {
         "php-parallel-lint/php-parallel-lint": "~1.2.0"
@@ -29,7 +30,10 @@
     "autoload": {
         "psr-4": {
             "NuSoap\\": "src/NuSoap"
-        }
+        },
+        "files": [
+            "src/nusoap.php"
+        ]
     },
     "scripts": {
         "linter": [
