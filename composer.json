@@ -5,6 +5,8 @@
     "keywords": [
         "soap",
         "nusoap",
+        "wsdl",
+        "web service",
         "php",
         "http",
         "xml",
@@ -26,6 +28,10 @@
     },
     "require-dev": {
         "php-parallel-lint/php-parallel-lint": "~1.2.0"
+    },
+    "suggest": {
+        "pear/mail_mime": "Allows use of MIME-enabled Server and Client",
+        "pear/mail_mime-decode": "Allows use of MIME-enabled Server and Client"
     },
     "autoload": {
         "psr-4": {
