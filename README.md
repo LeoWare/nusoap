@@ -11,7 +11,7 @@ NuSOAP is a rewrite of SOAPx4, provided by NuSphere and Dietrich Ayala. It is a 
 </p>
 
 <p align="center">
-  All credits belongs to official authors, take a look at <a href="https://sourceforge.net/projects/nusoap/">sourceforge.net/projects/nusoap/</a>
+  All credits belongs to official authors, take a look at <a href="https://sourceforge.net/projects/nusoap/">https://sourceforge.net/projects/nusoap/</a>
 </p>
 
 <p align="center">
@@ -25,8 +25,8 @@ NuSOAP is a rewrite of SOAPx4, provided by NuSphere and Dietrich Ayala. It is a 
 ## Info
 
 - Supported PHP: 7.4 - 8.0
-- Latest version: [0.10](https://github.com/LeoWare/nusoap/releases/tag/v0.10)
-- Official project: <https://sourceforge.net/projects/nusoap/>
+- Latest version: [0.10.1](https://github.com/LeoWare/nusoap/releases/tag/v0.10.1)
+- Project Site: <https://github.com/LeoWare/nusoap>
 
 ## Installation
 
