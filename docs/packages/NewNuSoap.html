@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
@@ -87,27 +87,56 @@
 </aside>
 
             <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <h2>Documentation</h2>
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
 
+    <article class="phpdocumentor-element -package">
+        <h2 class="phpdocumentor-content__title">NewNuSoap</h2>
+
+        
+
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes and Traits
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
     
-    <h3 id="packages">
-    Packages
-    <a href="#packages" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
-
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -package"><a href="packages/NewNuSoap.html"><abbr title="\NewNuSoap">NewNuSoap</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-Base.html"><abbr title="\NuSoap\Base">Base</abbr></a></dt>
+        <dd>NuSoap\Base</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-Client.html"><abbr title="\NuSoap\Client">Client</abbr></a></dt>
+        <dd>[nu]soapclient higher level class for easy usage.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-Fault.html"><abbr title="\NuSoap\Fault">Fault</abbr></a></dt>
+        <dd>Contains information for a SOAP fault.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-Parser.html"><abbr title="\NuSoap\Parser">Parser</abbr></a></dt>
+        <dd>Parses SOAP XML messages into native PHP values</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-Server.html"><abbr title="\NuSoap\Server">Server</abbr></a></dt>
+        <dd>Allows the user to create a SOAP server
+that is capable of receiving messages and returning responses</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-SoapVal.html"><abbr title="\NuSoap\SoapVal">SoapVal</abbr></a></dt>
+        <dd>For creating serializable abstractions of native PHP types.  This class
+allows element name/namespace, XSD type, and XML attributes to be
+associated with a value.  This is extremely useful when WSDL is not
+used, but is also useful when WSDL is used with polymorphic types, including
+xsd:anyType and user-defined types.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-Transport-Http.html"><abbr title="\NuSoap\Transport\Http">Http</abbr></a></dt>
+        <dd>transport class for sending/receiving data via HTTP and HTTPS
+NOTE: PHP must be compiled with the CURL extension for HTTPS support</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-Wsdl.html"><abbr title="\NuSoap\Wsdl">Wsdl</abbr></a></dt>
+        <dd>Parses a WSDL file, allows access to its data, contains other utility methods,
+and builds WSDL structures programmatically.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-WsdlCache.html"><abbr title="\NuSoap\WsdlCache">WsdlCache</abbr></a></dt>
+        <dd>Caches instances of the Wsdl class</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-XMLSchema.html"><abbr title="\NuSoap\XMLSchema">XMLSchema</abbr></a></dt>
+        <dd>Parses an XML Schema, allows access to its data, other utility methods.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-Mime-Client.html"><abbr title="\NuSoap\Mime\Client">Client</abbr></a></dt>
+        <dd>NuSoap\Mime\Client client supporting MIME attachments defined at
+http://www.w3.org/TR/SOAP-attachments.  It depends on the PEAR Mail_MIME library.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/NuSoap-Mime-Server.html"><abbr title="\NuSoap\Mime\Server">Server</abbr></a></dt>
+        <dd>NuSoap\Mime\nusoap_server_mime server supporting MIME attachments defined at
+http://www.w3.org/TR/SOAP-attachments.  It depends on the PEAR Mail_MIME library.</dd>
+    
     </dl>
-
-<h3 id="namespaces">
-    Namespaces
-    <a href="#namespaces" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
-
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -namespace"><a href="namespaces/nusoap.html"><abbr title="\NuSoap">NuSoap</abbr></a></dt>
-    </dl>
-
 
 
 <h3 id="toc">
@@ -139,12 +168,12 @@
 
     </dl>
 
-    
+        
 
-        <section class="phpdocumentor-functions">
+            <section class="phpdocumentor-functions">
         <h3 class="phpdocumentor-elements__header" id="functions">
             Functions
-            <a href="namespaces/default.html#functions" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="packages/NewNuSoap.html#functions" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article class="phpdocumentor-element -function - -deprecated">
     <h4 class="phpdocumentor-element__name" id="function_timestamp_to_iso8601">
@@ -156,7 +185,7 @@
     :
     <span class="phpdocumentor-element-found-in__line">77</span>
 
-            <a href="index.html#source-view.77"  class="phpdocumentor-element-found-in__source" data-line="77" data-modal="source-view"></a>
+            <a href="packages/NewNuSoap.html#source-view.77"  class="phpdocumentor-element-found-in__source" data-line="77" data-modal="source-view"></a>
     </aside>
 
         <p class="phpdocumentor-summary">convert unix timestamp to ISO 8601 compliant date string</p>
@@ -230,7 +259,7 @@
     :
     <span class="phpdocumentor-element-found-in__line">125</span>
 
-            <a href="index.html#source-view.125"  class="phpdocumentor-element-found-in__source" data-line="125" data-modal="source-view"></a>
+            <a href="packages/NewNuSoap.html#source-view.125"  class="phpdocumentor-element-found-in__source" data-line="125" data-modal="source-view"></a>
     </aside>
 
         <p class="phpdocumentor-summary">convert ISO 8601 compliant date string to unix timestamp</p>
@@ -295,7 +324,7 @@
     :
     <span class="phpdocumentor-element-found-in__line">166</span>
 
-            <a href="index.html#source-view.166"  class="phpdocumentor-element-found-in__source" data-line="166" data-modal="source-view"></a>
+            <a href="packages/NewNuSoap.html#source-view.166"  class="phpdocumentor-element-found-in__source" data-line="166" data-modal="source-view"></a>
     </aside>
 
         <p class="phpdocumentor-summary">sleeps some number of microseconds</p>
@@ -350,6 +379,7 @@
 </article>
             </section>
 
+    </article>
                 <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
@@ -363,7 +393,7 @@
 </section>
             </div>
         </div>
-        <a href="index.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="packages/NewNuSoap.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
